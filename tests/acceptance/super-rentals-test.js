@@ -1,3 +1,4 @@
+/* eslint-disable qunit/no-assert-equal */
 import { module, test } from 'qunit';
 import { click, visit, currentURL } from '@ember/test-helpers';
 import { setupApplicationTest } from 'ember-qunit';
@@ -19,10 +20,10 @@ module('Acceptance | super rentals', function (hooks) {
   test('visting /getting-in-touch', async function (assert) {
     await visit('/getting-in-touch');
     assert.equal(currentURL(), '/getting-in-touch');
-    assert.dom('h2').hasText('Contact Us')
-    assert.dom('.jumbo button').hasText('About us')
+    assert.dom('h2').hasText('Contact Us');
+    assert.dom('.jumbo button').hasText('About us');
 
     await click('.jumbo button');
-    assert.equal(currentURL(), '/about')
+    assert.equal(currentURL(), '/about');
   });
 });
